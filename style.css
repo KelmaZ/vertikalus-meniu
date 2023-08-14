@@ -1,0 +1,73 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap');
+
+:root {
+    --color-1: #fff;
+    --color-2: #000;
+    --color-3: #ED2B2A;
+
+    --font: raleway;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font);
+    background: var(--color-2);
+    color: var(--color-1);
+    padding: 30px;
+    text-align: center;
+}
+
+h1 {
+    text-align: center;
+    margin-top: 75px;
+    position: relative;
+    display: block;
+    transition: 0.3s;
+    transition-delay: 0.3s;
+}
+
+h1:hover {
+    cursor: pointer;
+}
+
+h1::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 50%;
+    width: 25%;
+    height: 100%;
+    background: var(--color-3);
+    opacity: 0;
+    z-index: 1;
+    transition: all 0.3s ease 0s;
+
+}
+
+h1:hover::before {
+opacity: 1;
+transform: translate(175%, -40%) scale(1.5);
+}
+
+h1::after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 5px;
+    background: var(--color-3);
+    bottom: 0;
+    z-index: -1;
+    right: 0;
+    transition: all 1s ease 0.5s;
+}
+
+h1:hover::after {
+    width: 100%;
+    opacity: 0;
+    transform: translate(-150%, 40%) scale(1.5);
+}
